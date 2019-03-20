@@ -39,7 +39,7 @@ class QsbkspiderSpider(scrapy.Spider):
                 # 匿名用户gender设为None
                 user_gender = None
                 # 获取用户段子
-                user_content = ''.join(user.xpath('./a/div/span/text()').getall())
+                user_content = ''.join(user.xpath('./a/div[@class="content"]/span/text()').getall())
                 # 获取好笑数
                 laught_number = user.xpath('./div[@class="stats"]/span/i/text()').get().strip()
                 # 获取评论数
